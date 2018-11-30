@@ -72,7 +72,7 @@ function draw() {
   // sum for letter amplitude, sum1 for vibration
   var sum = 0;
   var sum1 = 0;
-  for (var i = 900; i < 1000; i++) {
+  for (var i = 500; i < 700; i++) {
     sum += spectrum[i];
   }
   // sum = sum / 200 * 1.3;
@@ -81,7 +81,7 @@ function draw() {
     sum = 0
   }
 
-  for (var i = 50; i < 400; i++) {
+  for (var i = 200; i < 400; i++) {
     sum1 += spectrum[i];
   }
   sum1 = sum1 / 200;
@@ -306,7 +306,7 @@ function addParticles(_da){
     }
     else{
       for(var m = 0; m < 3; m++){
-        var newParticle = new Particle(width/2, height/2, random(3,11), 20);
+        var newParticle = new Particle(width/2, height/2, random(3,12), 20);
         particles.push(newParticle);
       }
       count1+=1;

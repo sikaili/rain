@@ -72,7 +72,7 @@ function Particle(x, y, m, r) {
       if(state==1){
         angle = atan2(mouseY-height/2,mouseX-width/2);
       }
-      if((distance>395&&distance<200*constrain(this.mass,0,4.5)||state == 1||this.mass>11) && (heading < 0.03*PI+angle && heading > -0.03*PI+angle)){
+      if((distance>395&&distance<200*constrain(this.mass,0,6)||state == 1||this.mass>15) && ((heading < 0.03*PI+angle && heading > -0.03*PI+angle)||(this.mass>16 && particles[j].mass>10))){
         sum1 = constrain(sum1,50,250);
         // stroke(random(500),sum1,sum+25,sum1);
         stroke(random(400)-sum1,sum1);
@@ -156,7 +156,7 @@ function Particle(x, y, m, r) {
         fill(100,noise(this.pos.x)*255,255-noise(this.pos.x)*255,30);
       }
       if(this.mass>4){
-        fill(255-this.mass*2,50,50,800/this.mass);
+        fill(255,50,50,180);
         noStroke();
         }
       ellipse(this.pos.x, this.pos.y, this.r+m, this.r+m)

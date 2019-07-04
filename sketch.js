@@ -210,13 +210,13 @@ function draw() {
   //   }
   //   pop();
   // }
-  pop();
   angle += speed;
   // if(mouseIsPressed){
   //   song.jump(59,59);
   // }
+  push();
+
   if (state == -1 || state1 == -1) {
-    push();
     fill(0, 180);
     rect(0, 0, width, height);
     stroke(0, 0);
@@ -238,7 +238,6 @@ function draw() {
     // text("Mixing : TANG Xiancheng (AB Studio)", 0.5 * windowWidth, 0.57 * windowHeight+190);
     // text("Sampler : LARGE Fréderic", 0.50 * windowWidth, 0.57 * windowHeight+160);
     // text("Music, Code, Design : LI Sikai (skyl)", 0.5 * windowWidth, 0.57 * windowHeight+220);
-    pop();
     // stroke(random(0, r), random(0, r), random(0, r));
     // var m = select("#name");
     // m.style("align:center;position:relative;background-color:white;width:100px;font-size:30px;float:center;padding:1vw")
@@ -254,6 +253,7 @@ function draw() {
   if (accelerationX > 30 || accelerationX > 30 || accelerationX > 30) {
     speed = 0;
   }
+  pop();
 }
 
 function touchStarted() {

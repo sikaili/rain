@@ -119,6 +119,7 @@ function draw() {
   // particles
   push();
   for (i = 0; i < particles.length; i++) {
+    let e;
     particles[i].separation(particles, sum1, sum, nn);
     let m = createVector(nos / 2, random(-1, 1));
     let n = createVector(0.5 * windowWidth, 0.5 * windowHeight);
@@ -130,7 +131,7 @@ function draw() {
       if (touches.length > 1) {
         e = createVector(touches[0].x, touches[0].y);
       } else {
-        let e = createVector(mouseX, mouseY);
+        e = createVector(mouseX, mouseY);
       }
       if (particles[i].mass > 3) {
         particles[i].applyForce(createVector(width / 50, height / 50));
